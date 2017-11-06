@@ -1,0 +1,13 @@
+
+
+@@ Table devices
+    | deviceName  | size      | tags     |
+    | Mobile      | 450x700   | mobile   |
+    | Tablet      | 600x800   | tablet   |
+    | Desktop     | 1440x2300 | desktop  |
+
+
+@@ Parameterized using devices
+Home page on ${deviceName}
+    jsfactory galen_test/dev/chrome-headless.js http://0.0.0.0:8080 ${size}
+        check galen_test/index.gspec --include "${tags}"
